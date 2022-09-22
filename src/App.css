@@ -1,38 +1,326 @@
-.App {
+
+body{
+  background-image: url("../src//assets/couple.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+}
+
+.logo{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  height: 150px;  
+  box-shadow: 4px 4px 4px 4px  rgba(238, 144, 144, 0.568);
+  background-color: rgba(238, 144, 144, 0.247);  
+  object-fit: none;  
+  object-position: center top; 
+  border-radius: 10px;
+}
+
+
+/* input styling */
+
+
+.login, .register{
+  height: 50vh;
+
+}
+
+
+
+.register input, label, p , .text-container{
+  font-weight: bold;
+}
+
+input, select, button {
+  border-radius: 8px;
+}
+
+.index-container{
+  background-color: rgba(0, 0, 0, 0.103);
+  padding: 20px;
+}
+
+ .register input ,  .login input {
+  background-color: rgba(238, 238, 238, 0.034);
+  border: none;
+  outline: none;
+  width: 250px;
+  padding: 5px;
+  box-shadow: 0 2px 2px black;
+}
+
+.age{
+  width: 100px;
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+#logedIn{
+  box-shadow: none;
+  width: auto;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+input[type=number]::-webkit-inner-spin-button {
+  opacity: 0.4;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.register p {
+  color: rgba(238, 238, 238, 0.664);
+  margin-right: 10px;
+
+}
+
+/* styling options  */
+
+.register select, .login select{
+  background-color: rgba(238, 238, 238, 0.034);
+  border: none;
+  outline: none;
+  box-shadow: 0 2px 2px black;
+  font-weight: bold;
+  width: 250px;
+  padding: 0;
+
+}
+
+
+/* register text styling */
+.text-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgba(238, 238, 238, 0.664);
+  font-size: 1.1em;
+}
+.arrow{
+  transition: 0.3s;
+  font-weight: bolder!important;
+  box-shadow: 2px 2px 2px 2px black;
+  border: none;
+  background-color: rgba(238, 238, 238, 0.144);
+  font-size: 1.5em;
+  width: 50px;
+  height: 50px;
+  
+
+
+}
+
+.arrow:hover{
+ background-color: rgba(255, 255, 255, 0.336);
+ color: black;
+}
+
+/* cities and gender container styling */
+.cities-container , .gender-container, .intrests-container{
   display: flex;
   flex-direction: column;
+  justify-content: start;
   align-items: center;
+}
+
+.register-btn, .login-btn{
+  width: 250px;
+  font-size: 1.1em;
+  font-weight: bold;
+  border: none;
+  box-shadow: 2px 4px 2px 2px black;
+  color: rgba(238, 238, 238, 0.664);
+  transition: 0.3s;
+  background-color: rgba(0, 0, 0, 0.212);
+  padding: 5px;
+}
+
+.register-btn:hover, .login-btn:hover{
+  box-shadow: 2px 4px 2px 2px  rgba(238, 238, 238, 0.473);
+}
+
+
+
+/* error message */
+.error{
+  color: rgb(207, 67, 67);
+  font-weight: bold;
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  height: 100px;
+
+}
+
+.nav {
+  background-color: rgba(238, 144, 144, 0.568);  
+  padding: 20px;
+  color: #eee;
+  font-weight: bold;
+}
+
+.nav li{
+  transition: 0.3s;
+  position: relative;
+}
+
+
+
+
+
+.nav li:hover{
+  color: pink;
+  cursor: pointer;
+
+}
+
+
+
+
+/* profile */
+
+
+.user-information{
+  color: #eee;
+  padding: 20px;
+  border-radius: 20px;
+}
+
+.profile-card{
+  width: 400px;
+  padding: 20px;
+  margin: 20px;
+
+}
+.add-photo{
+  padding: 10px;
+  background-color: #eee;
+  opacity: .75;
+  color: rgb(0, 0, 0);
+  transition: 0.3s;
+  width: 150px;
+}
+
+.add-photo:hover{
+  background-color: black;
   color: white;
+  cursor: pointer;
+
 }
 
-.App-link {
-  color: #61dafb;
+.logout{
+  padding: 10px;
+  background-color: #eee;
+  opacity: .75;
+  color: rgb(0, 0, 0);
+  transition: 0.3s;
+  margin-top: 20px;
+}
+.logout:hover{
+  background-color: black;
+  color: white;
+  cursor: pointer;
+}
+/* photo slider style */
+.photo-input{
+  background-color: #eee;
+  opacity: .75;
+  color: rgb(0, 0, 0);
+  padding: 10px;
+  width: 100%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+
+/* photo slider */
+
+.slick-slide img {
+  margin: auto;
+    width: 100%;
+  height: 400px;
+  border-radius: 20px;
 }
+
+
+/* filter */
+.filter{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  height: 70vh;
+  padding: 20px;
+  width: 100%;
+}
+.filter span, label, p{
+  color: #eee;
+  text-align: center;
+}
+.filter  input, select, button{
+  width: 400px;
+  background-color: #eee;
+  opacity: .75;
+  padding: 10px;
+}
+
+.filter button:hover{
+  background-color: black;
+  color: white;
+  cursor: pointer;
+
+}
+
+
+/* swipining container */
+.swipining-container{
+position: relative;
+}
+
+/* photos carusel container */
+
+.singleUserPhotosContainer{
+  position: absolute;
+  padding: 50px;
+ background-color: #ffafcc;
+
+  width: 100%;
+  top: 0;
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+}
+.slider-container{
+  width: 400px;
+  padding: 10px;
+}
+
+
+.fa-door-closed{
+position: absolute;
+top:1%;
+right: 1%;
+color: #eee;
+font-size: 3em;
+}
+.fa-door-closed:hover{
+  cursor: pointer;
+  color: black;
+}
+
+/* swipining tinder */
+.card-container{
+max-width: 1200px;
+width: 400px;
+
+}
+.single-card{
+text-align: center;
+position: relative;
+}
+
+.single-card img:hover{
+  cursor: pointer;
+}
+
+
