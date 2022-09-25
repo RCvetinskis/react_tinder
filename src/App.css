@@ -100,9 +100,9 @@ input[type=number]::-webkit-inner-spin-button {
   border: none;
   background-color: rgba(238, 238, 238, 0.144);
   font-size: 1.5em;
-  width: 50px;
-  height: 50px;
-  
+  width: auto;
+  height: auto;
+  padding: 5px;
 
 
 }
@@ -110,6 +110,7 @@ input[type=number]::-webkit-inner-spin-button {
 .arrow:hover{
  background-color: rgba(255, 255, 255, 0.336);
  color: black;
+ cursor: pointer;
 }
 
 /* cities and gender container styling */
@@ -156,6 +157,7 @@ input[type=number]::-webkit-inner-spin-button {
   padding: 20px;
   color: #eee;
   font-weight: bold;
+  border-radius: 10px;
 }
 
 .nav li{
@@ -191,6 +193,8 @@ input[type=number]::-webkit-inner-spin-button {
   margin: 20px;
 
 }
+
+
 .add-photo{
   padding: 10px;
   background-color: #eee;
@@ -235,9 +239,9 @@ input[type=number]::-webkit-inner-spin-button {
 
 .slick-slide img {
   margin: auto;
-    width: 100%;
+   width: 100%;
   height: 400px;
-  border-radius: 20px;
+  border-radius: 5px;
 }
 
 
@@ -278,22 +282,26 @@ position: relative;
 /* photos carusel container */
 
 .singleUserPhotosContainer{
-  position: absolute;
+  position: fixed;
   padding: 50px;
- background-color: #ffafcc;
-
+  background-color: rgba(238, 144, 144, 0.568);
   width: 100%;
-  top: 0;
-  height: 70vh;
+  top: 7%;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 10000;
 }
 .slider-container{
-  width: 400px;
+  width: 100%;
   padding: 10px;
 }
+.slider-container > div img{
+  width: 500px;
+  height: 60%;
+}
+
 
 
 .fa-door-closed{
@@ -312,15 +320,98 @@ font-size: 3em;
 .card-container{
 max-width: 1200px;
 width: 400px;
+position: relative;
 
 }
 .single-card{
 text-align: center;
 position: relative;
+padding: 10px;
+background-color: rgba(238, 144, 144, 0.568);
 }
 
 .single-card img:hover{
   cursor: pointer;
 }
 
+.likes-nav{
+  background-color: rgba(238, 144, 144, 0.568); 
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow:  4px 4px 4px 4px rgba(238, 144, 144, 0.247);
+  height: 60px;
+}
 
+.likes-nav li{
+  color: #eee;
+  font-weight: bold;
+  font-size: 1.5em;
+  transition: 0.3s;
+}
+
+.likes-nav li:hover{
+  cursor: pointer;
+  opacity: 0.7;
+}
+
+.single-user-card{
+  width: 400px;
+  height: 400px;
+  padding: 10px;
+  background-color: rgba(238, 144, 144, 0.568);
+  border-radius: 10px;
+}
+
+.single-user-card img{
+  width: 90%;
+  height: 250px;
+}
+
+
+.aMatch{
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.897);
+  top: 0;
+  height: 100vh;
+  width: 100%;
+  z-index: 1000;
+  padding: 20px;
+  opacity: 0.9;
+}
+
+.aMatch img{
+  height: 80%;
+}
+
+@media (max-width: 576px) {
+  .profile-card{
+    width: 350px;
+  }
+  .profile-card .add-photo{
+    width: 200px;
+  }
+  .slick-slide img{
+    width: 350px;
+    height: 300px;
+
+  }
+  .filter  input, select, button{
+    width: 300px;
+  }
+  .single-user-card{
+    width: 300px;
+    height: auto;
+  }
+  .logo{
+    height: auto;
+  }
+  .logo-container img{
+    width: 250px;
+  }
+  .likes-nav li{
+    font-size: 1em;
+  }
+  .likes-nav{
+    height: auto;
+  }
+}

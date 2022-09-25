@@ -4,10 +4,10 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 const ImageSlider = ({ pictures }) => {
   const settings = {
-    infinite: true,
+    infinite: false,
     dots: false,
     slidesToShow: 1,
-    slidesToScroll: 2,
+    slidesToScroll: 1,
     lazyLoad: true,
     autoplaySpeed: 2000,
   };

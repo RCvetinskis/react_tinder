@@ -90,9 +90,10 @@ const Register = ({ setShowLogin, showLogin, setErrorMsg, setShowErr }) => {
 
       <div className="text-container">
         <p>Already have a user? Click here to login </p>
-        <button onClick={() => setShowLogin(!showLogin)} className="arrow">
-          <i className="fa-solid fa-arrow-right"></i>
-        </button>
+        <i
+          onClick={() => setShowLogin(!showLogin)}
+          className="arrow fa-solid fa-arrow-right"
+        ></i>
       </div>
     </div>
   );

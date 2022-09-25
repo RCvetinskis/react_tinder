@@ -3,7 +3,8 @@ import { useNavigate } from "react-router-dom";
 import mainContext from "../context/MainContext";
 import AutoLogin from "./AutoLogin";
 const Login = ({ setShowLogin, showLogin, setErrorMsg, setShowErr }) => {
-  const { setAutoLoginStatus, setUser } = useContext(mainContext);
+  const { setAutoLoginStatus, setUser, setUsers, socket } =
+    useContext(mainContext);
   //state for checkbox
 
   const nameRef = useRef();
@@ -55,9 +56,12 @@ const Login = ({ setShowLogin, showLogin, setErrorMsg, setShowErr }) => {
           setShowErr(true);
           setUser(null);
         } else {
+          // on login sets user and sets all users by current user  filter
           setShowLogin(true);
           setShowErr(false);
-          setUser(data.data);
+          setUser(data.user);
+          socket.emit("login", data.user);
+          setUsers(data.users);
           nav("/profile");
         }
       });
@@ -74,9 +78,11 @@ const Login = ({ setShowLogin, showLogin, setErrorMsg, setShowErr }) => {
 
       <div className="text-container">
         <p className="mr-3">Back to Register</p>
-        <button onClick={() => setShowLogin(!showLogin)} className="arrow">
-          <i className="fa-solid fa-arrow-right"></i>
-        </button>
+
+        <i
+          onClick={() => setShowLogin(!showLogin)}
+          className="arrow fa-solid fa-arrow-right"
+        ></i>
       </div>
     </div>
   );
